@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+<body>
+
+<script type="text/javascript">
+    function to_manage_commodities() {
+        $("#login_frm").attr('action', '/commodity/getCommodities');
+        $("#login_frm").submit();
+    }
+</script>
+
+<div id="login">
+    <h1>利民超市</h1>
+    <form action="/supermarket/index" method="post" id="login_frm">
+        <div align="center">
+            <hr>
+        </div>
+        <div align="center" >
+            <input type="hidden" name="submitFlag" value="login"/>
+            <br/>
+            用户名:
+            <input type="text" name="username"/>
+            <br/>
+            密&#12288码:
+            <input type="password" name="password"/>
+            <br/>
+            <br/>
+            身&#12288份:
+            <input type="radio" name="role" value=1>管理员
+            <input type="radio" name="role" value=2>收银员
+            <br/>
+            <br/>
+            <div align="center">
+                <input type="submit" value="登 录"/>
+                <input type="button" value="进 货" onclick="to_manage_commodities()"/>
+            </div>
+        </div>
+        <br/>
+    </form>
+</div>
+</body>
+</html>
