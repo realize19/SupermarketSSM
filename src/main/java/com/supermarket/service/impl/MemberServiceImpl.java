@@ -2,10 +2,12 @@ package com.supermarket.service.impl;
 
 import com.supermarket.dao.MemberDao;
 import com.supermarket.pojo.Member;
+import com.supermarket.pojo.MemberRecord;
 import com.supermarket.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Service
@@ -37,6 +39,26 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public Member getMemberNPT(int memberID){
         return memberDao.getMemberNPT(memberID);
+    }
+
+    @Override
+    public boolean getMemberAll(int memberID, BigDecimal total_cost) {
+        return false;
+    }
+
+    @Override
+    public Member getMemberID(int memberID) {
+        return memberDao.getMemberID(memberID);
+    }
+
+    @Override
+    public void addMemberRecord(MemberRecord memberRecord) {
+        memberDao.addMemberRecord(memberRecord);
+    }
+
+    @Override
+    public MemberRecord getmemberRecord(int memberID) {
+        return memberDao.getmemberRecord(memberID);
     }
 
 

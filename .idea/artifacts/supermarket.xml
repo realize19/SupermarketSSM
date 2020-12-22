@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="supermarket">
+    <output-path>$PROJECT_DIR$/../artifacts/supermarket</output-path>
+    <root id="root">
+      <element id="archive" name="supermarket.jar">
+        <element id="module-output" name="supermarket" />
+      </element>
+    </root>
+  </artifact>
+</component>

@@ -25,23 +25,27 @@ public class UserController {
    public UserService userService;
    @Resource
    private MemberService memberService;
-   @RequestMapping(value = "index", method = RequestMethod.POST)
+   @RequestMapping(value = "/index", method = RequestMethod.POST)
    public String login(String username, String password, Integer role, Model model,HttpSession session) {
       // 调用service方法
-      User user = userService.login(username, password, role);
-      session.setAttribute("user", user);
-      if (1 == user.getRole()) {
-         //进入会员管理界面
-         List<Member> list =memberService.getMembers();
-         model.addAttribute("members",list);
-         return "manager";
-      } else if (2 == user.getRole()) {
+      if(username!=null&&password!=null&&role!=null){
+         User user = userService.login(username, password, role);
+         session.setAttribute("user", user);
+         if (1 == user.getRole()) {
+            //进入会员管理界面
+            List<Member> list =memberService.getMembers();
+            model.addAttribute("members",list);
+            return "manager";
+         } else if (2 == user.getRole()) {
 
-         model.addAttribute("shoppingNum", IDUtil.getId());
+            model.addAttribute("shoppingNum", IDUtil.getId());
 
-         return "cashier";
+            return "cashier";
 
+         }
       }
+
+
       return "error";
 
    }

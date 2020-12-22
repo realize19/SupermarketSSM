@@ -36,8 +36,8 @@ h1 {
 
 input {
     width: 278px;
-    height: 18px;
-    margin-bottom: 10px;
+    height: 24px;
+    margin-bottom: 15px;
     outline: none;
     padding: 10px;
     font-size: 13px;
@@ -53,7 +53,7 @@ input {
 
 .but {
     width: 300px;
-    min-height: 20px;
+    min-height: 64px;
     display: block;
     background-color: #4a77d4;
     border: 1px solid #3762bc;
